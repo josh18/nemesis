@@ -1,0 +1,54 @@
+.thinking {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav {
+    flex: 0 0 50px;
+    display: flex;
+    align-items: stretch;
+    background-color: fade(#000, 10%);
+
+    a {
+        display: flex;
+        align-items: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        color: @nemesisDark;
+
+        &:hover {
+            background-color: fade(#000, 10%);
+
+            .previous-icon:global {
+                animation: previous 2.25s linear 1s infinite;
+            }
+
+            .config-icon:global {
+                animation: spin 2.25s ease 1s infinite;
+            }
+        }
+    }
+}
+
+.previous-icon {
+    margin-right: 10px;
+}
+
+.nav-config {
+    margin-left: auto;
+}
+
+.content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+
+    @media (min-width: 500px) {
+        padding: 50px;
+    }
+}

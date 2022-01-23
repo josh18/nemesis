@@ -1,0 +1,43 @@
+.button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    color: inherit;
+    border: 2px solid fade(#fff, 20%);
+    border-radius: 4px;
+    transition: border-color 0.1s, color 0.2s;
+
+    &[disabled] {
+        color: fade(#fff, 40%);
+        cursor: default;
+    }
+
+    &:not([disabled]):hover {
+        border-color: fade(#fff, 40%);
+    }
+
+    + .button {
+        margin-top: 20px;
+    }
+}
+
+.icon {
+    position: absolute;
+    right: 15px;
+    color: @nemesisGreen;
+    transition: opacity 0.4s;
+
+    &:global {
+        &.transition-in,
+        &.transition-out {
+            opacity: 0;
+        }
+    }
+}
+
+.thinking {
+    margin-top: -2px;
+    margin-bottom: -2px;
+}

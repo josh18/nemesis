@@ -1,0 +1,27 @@
+.stream {
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    background-color: fade(#000, 50%);
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 56%; // 448 / 800 * 100
+    }
+
+    img {
+        position: absolute;
+        top: 0;
+        max-width: 100%;
+    }
+}
+
+.test {
+    flex: 0 0 auto;
+    width: 800px;
+    height: 800px;
+    margin-top: 20px;
+    background-color: fade(#fff, 70%);
+}

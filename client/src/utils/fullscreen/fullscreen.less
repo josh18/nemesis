@@ -1,0 +1,36 @@
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0;
+    transition: 0.4s opacity ease;
+
+    &.is-active {
+        opacity: 1;
+    }
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .content img {
+        position: static;
+        max-height: 100vh;
+    }
+}
+
+.content {
+    transition-property: top, left, width, height;
+    transition: 0.4s ease;
+}

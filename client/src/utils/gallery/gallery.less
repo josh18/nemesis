@@ -1,0 +1,134 @@
+.gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-color: #000;
+    transition: 0.4s opacity ease;
+
+    &:global {
+        &.transition-in,
+        &.transition-out {
+            opacity: 0;
+        }
+    }
+
+    img,
+    video {
+        width: 100%;
+        height: 100%;
+    }
+
+    video::-webkit-media-controls {
+        transition: 0.4s opacity ease;
+    }
+}
+
+.thinking {
+    position: absolute;
+    transition: 0.2s opacity ease;
+
+    &:global {
+        &.transition-in,
+        &.transition-out {
+            opacity: 0;
+        }
+
+        &.transition-in-end {
+            transition-delay: 1s;
+            transition-duration: 0.4s;
+        }
+    }
+}
+
+.count,
+.close,
+.nav {
+    position: absolute;
+    background-color: fade(#000, 30%);
+    border-radius: 2px;
+    transition: 0.4s opacity ease, 0.4s transform ease, 0.1s background-color linear, 0.1s color linear;
+}
+
+.count {
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+}
+
+.close,
+.nav {
+    &:hover {
+        background-color: fade(#000, 50%);
+        color: @nemesisGreen;
+    }
+}
+
+.close {
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+
+    &:hover .icon:global {
+        animation: pulse 2.25s ease 1s infinite;
+    }
+}
+
+.nav {
+    display: none;
+    padding: 40px 10px;
+
+    @media (min-width: 500px) {
+        display: block;
+    }
+}
+
+.previous {
+    left: 20px;
+
+    &:hover .icon:global {
+        animation: previous 2.25s linear 1s infinite;
+    }
+}
+
+.next {
+    right: 20px;
+
+    &:hover .icon:global {
+        animation: next 2.25s linear 1s infinite;
+    }
+}
+
+.is-idle {
+    video::-webkit-media-controls,
+    .count,
+    .close,
+    .nav {
+        opacity: 0;
+    }
+
+    .count {
+        transform: translate(-30px, -30px);
+    }
+
+    .close {
+        transform: translate(30px, -30px);
+    }
+
+    .previous {
+        transform: translateX(-30px);
+    }
+
+    .next {
+        transform: translateX(30px);
+    }
+}
+
+.gallery-item {
+    cursor: pointer;
+}

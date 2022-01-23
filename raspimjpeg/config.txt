@@ -1,0 +1,43 @@
+### Annotation
+annotation %D/%M/%Y %h:%m:%s
+
+### Camera
+hflip 1
+vflip 1
+
+### Stream
+width 800
+quality 15
+
+### Image
+image_width 3280
+image_height 2464
+image_quality 15
+
+### Video
+video_width 1920
+video_height 1080
+video_fps 30
+video_bitrate 20000000
+video_buffer 3000
+video_split 30
+MP4Box_fps 30
+
+### Motion
+motion_external false
+
+### Startup
+autostart standard
+
+### Files
+preview_path /dev/shm/nemesis/live.jpg
+media_path /home/pi/nemesis/assets/thumbnails
+image_path /home/pi/nemesis/assets/images/%D-%M-%Y-%h-%m-%s.jpg
+lapse_path /home/pi/nemesis/assets/timelapses/%D-%M-%Y-%h-%m-%s.jpg
+video_path /home/pi/nemesis/assets/videos/%D-%M-%Y-%h-%m-%s.mp4
+control_file /home/pi/nemesis/raspimjpeg/input.txt
+
+### Log Files
+status_file /dev/shm/nemesis/status.txt
+log_file /home/pi/nemesis/raspimjpeg/log.txt
+motion_pipe /home/pi/nemesis/raspimjpeg/motion-trigger.txt

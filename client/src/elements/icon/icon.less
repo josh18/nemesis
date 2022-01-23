@@ -1,0 +1,54 @@
+.thinking {
+    display: inline-block;
+    position: relative;
+    transform: rotate(-20deg);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 0.05em currentColor;
+    }
+
+    &.is-paused {
+        .thinking-rotate,
+        .thinking-line {
+            display: none;
+        }
+    }
+}
+
+.thinking-rotate,
+.thinking-line {
+    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.thinking-rotate {
+    height: 100%;
+    animation: 1.5s linear infinite;
+    animation-name: rotate;
+}
+
+.thinking-line {
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 0.05em currentColor;
+    transform: rotate(-140deg);
+    animation: 1.5s ease-in-out infinite;
+    animation-name: grow;
+}
+
+@keyframes rotate {
+      0% { transform: rotate(0deg); }
+    100% { transform: rotate(220deg); }
+}
+
+@keyframes grow {
+      0% { transform: rotate(-140deg); }
+    100% { transform: rotate(140deg); }
+}

@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+
+client/dist
+raspimjpeg/input.txt
+raspimjpeg/log.txt
+raspimjpeg/motion-trigger.txt
+server/data
+server/logs
